@@ -20,19 +20,18 @@ function applique(f, tab) {
 //applique(function(n) { return (n+1); } , [1,2,3,4,5,6]);
 
 msgs = [
-    { "msg" : "Hello World" },
-    { "msg" : "Blah Blah" },
-    { "msg" : "I love cats" }
-  ];
+    { "msg": "Hello World", "date": "2025-03-08 12:30", "pseudo": "Alice" },
+    { "msg": "Blah Blah", "date": "2025-03-08 12:35", "pseudo": "Bob" },
+    { "msg": "I love cats", "date": "2025-03-08 12:40", "pseudo": "Charlie" }
+];
 
 function update(messages) {
     const messagesList = document.getElementById('messagesList');
-    
     messagesList.innerHTML = '';
 
     messages.forEach(message => {
         const listItem = document.createElement('li');
-        listItem.textContent = message.msg;
+        listItem.innerHTML = `<strong>${message.pseudo}</strong> : ${message.msg} <br><small>${message.date}</small>`;
         messagesList.appendChild(listItem);
     });
 }
