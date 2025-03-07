@@ -36,7 +36,3 @@ function update(messages) {
         messagesList.appendChild(listItem);
     });
 }
-
-document.getElementById('sendButton').addEventListener('click', () => {
-    update(msgs); 
-});
