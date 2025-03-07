@@ -36,3 +36,16 @@ function update(messages) {
         messagesList.appendChild(listItem);
     });
 }
+
+function toggleMode() {
+    const body = document.body;
+    
+    body.classList.toggle('dark');
+
+    const button = document.getElementById('toggleModeButton');
+    if (body.classList.contains('dark')) {
+        button.textContent = 'Passer en mode clair';
+    } else {
+        button.textContent = 'Passer en mode sombre';
+    }
+}
