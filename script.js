@@ -13,8 +13,30 @@ function applique(f, tab) {
     return tab.map(f);
 }
 
-console.log(fact(6));
+//console.log(fact(6));
 
-applique(fact,[1,2,3,4,5,6]);
+//applique(fact,[1,2,3,4,5,6]);
 
-applique(function(n) { return (n+1); } , [1,2,3,4,5,6]);
+//applique(function(n) { return (n+1); } , [1,2,3,4,5,6]);
+
+msgs = [
+    { "msg" : "Hello World" },
+    { "msg" : "Blah Blah" },
+    { "msg" : "I love cats" }
+  ];
+
+function update(messages) {
+    const messagesList = document.getElementById('messagesList');
+    
+    messagesList.innerHTML = '';
+
+    messages.forEach(message => {
+        const listItem = document.createElement('li');
+        listItem.textContent = message.msg;
+        messagesList.appendChild(listItem);
+    });
+}
+
+document.getElementById('sendButton').addEventListener('click', () => {
+    update(msgs); 
+});
