@@ -45,7 +45,12 @@ Open index.html
 App is deployed on render, using two services :
 
 Front : https://archiappalexandrecorreia-tp1.onrender.com
+
 Back :  https://archiappalexandrecorreia-tp2.onrender.com
+
+:warning:
+as I use the free render plan, the back can spin down due to inactivity. It can take a minute to load and be available after being requested
+:warning:
 
 Click on front to use the app. The back can be used to test requests on the browser (all are GET)
 
@@ -93,8 +98,8 @@ A message is a JSON object containing the following fields:
   "pseudo": "Charlie"
 }
 ```
-Pseudo is fixed for now
-Date is obtained by the backend
+
+When posting a message, the pseudo and date are sent too as parameters
 
 
 
