@@ -17,6 +17,10 @@ app.use(function(req, res, next) {
     next();
   });
 
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, '../TP1/index.html'));
+})
+
 
 // test route
   app.get('/test/*', function(req, res) {
@@ -67,7 +71,7 @@ app.get('/msg/getAll', (req, res) => {
 // post a new message
 app.get('/msg/post/:message', (req, res) => {
     const message = decodeURIComponent(req.params.message);
-    allMsgs.push({ "msg": message, "date": new Date().toISOString(), "pseudo": "Anonymous" });
+    allMsgs.push({ "msg": message, "date": new Date().toISOString(), "pseudo": "Alexandre C" });
     res.json({ id: allMsgs.length - 1 });
 });
 

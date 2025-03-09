@@ -30,6 +30,19 @@
         <button onclick = postMessage() id="sendButton">Poster message</button>
     </section>
 
+    <section>
+        <h2>Configuration du Micro-Service</h2>
+        <label for="serviceUrl">URL du micro-service :</label>
+        <input type="text" id="serviceUrl" value="http://localhost:8080" placeholder="Entrez l'URL du micro-service">
+    </section>
+    
+    <section>
+        <h2>Supprimer un Message</h2>
+        <label for="messageId">ID du message à supprimer :</label>
+        <input type="number" id="messageId" placeholder="Entrez un ID positif" min="0">
+        <button onclick="deleteMessage()">Supprimer</button>
+    </section>
+
     <script src="script.js"></script>
 
 </body>
