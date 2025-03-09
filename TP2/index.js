@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
   });
 
 app.get("/", function(req, res) {
-    res.send("Backend here. Open the front end.");
+    res.send("Backend here. Open the front end service or the index.html if locally.");
 });
 
 
