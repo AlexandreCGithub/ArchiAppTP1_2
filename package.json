@@ -1,0 +1,15 @@
+{
+  "name": "archiapptp1_2",
+  "version": "1.0.0",
+  "description": "TP1 &amp; 2 d'ArchiApp d'Alexandre Correia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
