@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var path = require('path');
+app.use(express.static(path.join(__dirname, '../TP1')));
 
 var compteur = 0;
 
@@ -9,6 +11,17 @@ var allMsgs = [
     { "msg": "I love cats", "date": "2025-03-09T13:08:04.798Z", "pseudo": "Charlie" }
 ];
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
+
+// test route
+  app.get('/test/*', function(req, res) {
+    res.json({"msg": req.url.substring(6)});
+});
 
 // get counter value
 app.get('/cpt/query', function(req, res) {

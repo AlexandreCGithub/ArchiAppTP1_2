@@ -20,13 +20,14 @@
             <li>Message 4</li>
             <li>Message 5</li>
         </ul>
+        <button onclick = update() id="sendButton">Mettre à jour</button>
     </section>
 
     <section>
         <h2>Poster un Nouveau Message</h2>
         <textarea id="newMessage" rows="4" cols="50" placeholder="Écrivez votre message ici..."></textarea>
         <br><br>
-        <button onclick = update(msgs) id="sendButton">Mettre à jour</button>
+        <button onclick = postMessage() id="sendButton">Poster message</button>
     </section>
 
     <script src="script.js"></script>

@@ -19,21 +19,42 @@ function applique(f, tab) {
 
 //applique(function(n) { return (n+1); } , [1,2,3,4,5,6]);
 
-msgs = [
-    { "msg": "Hello World", "date": "2025-03-08 12:30", "pseudo": "Alice" },
-    { "msg": "Blah Blah", "date": "2025-03-08 12:35", "pseudo": "Bob" },
-    { "msg": "I love cats", "date": "2025-03-08 12:40", "pseudo": "Charlie" }
-];
+// get messages from backend: used at the page load and when update is clicked
+function fetchMessages() {
+    fetch('http://localhost:8080/msg/getAll')
+        .then(response => response.json())
+        .then(data => {
+            const messagesList = document.getElementById('messagesList');
+            messagesList.innerHTML = '';
+            data.messages.forEach((message, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${message.pseudo}: ${message.msg} (${new Date(message.date).toLocaleString()})`;
+                messagesList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching messages:', error));
+}
 
-function update(messages) {
-    const messagesList = document.getElementById('messagesList');
-    messagesList.innerHTML = '';
+function update() {
+    fetchMessages();
+}
 
-    messages.forEach(message => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `<strong>${message.pseudo}</strong> : ${message.msg} <br><small>${message.date}</small>`;
-        messagesList.appendChild(listItem);
-    });
+function postMessage()
+{
+    const newMessage = document.getElementById('newMessage').value;
+    if (newMessage.trim() !== '') {
+        fetch(`http://localhost:8080/msg/post/${encodeURIComponent(newMessage)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.id !== undefined) {
+                    console.log('Message envoyé avec succès!');
+                    fetchMessages();
+                } else {
+                    console.error('Erreur lors de l\'envoi du message.');
+                }
+            })
+            .catch(error => console.error('Error posting message:', error));
+    }
 }
 
 function toggleMode() {
@@ -48,3 +69,8 @@ function toggleMode() {
         button.textContent = 'Passer en mode sombre';
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchMessages();
+});
+
