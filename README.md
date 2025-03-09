@@ -92,7 +92,7 @@ A message is a JSON object containing the following fields:
   "date": "2025-03-09T13:08:04.798Z",
   "pseudo": "Charlie"
 }
-
+```
 Pseudo is fixed for now
 Date is obtained by the backend
 
