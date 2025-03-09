@@ -58,6 +58,18 @@ app.get('/msg/post/:message', (req, res) => {
     res.json({ id: allMsgs.length - 1 });
 });
 
+// delete a message by id
+app.get('/msg/del/:id', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    
+    if (!isNaN(id) && id >= 0 && id < allMsgs.length) {
+        allMsgs.splice(id, 1);
+        res.json({ code: 0 });
+    } else {
+        res.json({ code: -1 });
+    }
+});
+
 // Launch server
 app.listen(8080, function() {
     console.log('Serveur démarré sur le port 8080');
