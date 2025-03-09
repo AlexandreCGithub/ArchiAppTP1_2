@@ -48,9 +48,9 @@ Front : https://archiappalexandrecorreia-tp1.onrender.com
 
 Back :  https://archiappalexandrecorreia-tp2.onrender.com
 
-:warning:
+::: warning
 as I use the free render plan, the back can spin down due to inactivity. It can take a minute to load and be available after being requested
-:warning:
+:::
 
 Click on front to use the app. The back can be used to test requests on the browser (all are GET)
 
