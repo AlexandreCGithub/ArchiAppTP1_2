@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
     next();
   });
 
-  app.get("/", function(req, res) {
+app.get("/", function(req, res) {
     res("Backend here. Open the front end.");
 })
 
