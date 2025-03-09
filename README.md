@@ -1,8 +1,9 @@
 # ArchiAppTP1_2
 TP1/2 of Alexandre Correia
 This is a simple message app with a front and a back end.
+It uses HTML, javascript and node for the back. It is deployed using Render.
 
-## Description
+## 1. Description
 
 ### Frontend
 
@@ -12,7 +13,7 @@ Folder `TP1`, contains `index.html`, `script.js`, `style.css`
 
 Folder `TP2`, contains `index.js`, package files and (locally) node modules
 
-## :computer: Local deployment
+## 2. Local deployment
 
 ### Requirements
 
@@ -40,7 +41,7 @@ Launch app
 
 Open index.html
 
-## :rocket: Online deployment
+## 3. Online deployment
 
 App is deployed on render, using two services :
 
@@ -54,7 +55,7 @@ as I use the free render plan, the back can spin down due to inactivity. It can 
 
 Click on front to use the app. The back can be used to test requests on the browser (all are GET)
 
-## :books: App description:
+## 4. App description:
 
 ### Frontend: 
 
