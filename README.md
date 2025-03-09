@@ -73,7 +73,7 @@ Availables routes, all are GET
 | `/msg/get/:id`      | Get a message by ID        |
 | `/msg/nber`         | Get number of messages     |
 | `/msg/getAll`       | Get all messages           |
-| `/msg/post/:message`| Post a message             |
+| `/msg/post/:message`| Post a message with a parameter pseudo and date |
 | `/msg/del/:id`      | Delete a message by ID     |
 
 ### Message Structure

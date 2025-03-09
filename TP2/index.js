@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var path = require('path');
 
 var compteur = 0;
 
@@ -72,7 +71,15 @@ app.get('/msg/getAll', (req, res) => {
 // post a new message
 app.get('/msg/post/:message', (req, res) => {
     const message = decodeURIComponent(req.params.message);
-    allMsgs.push({ "msg": message, "date": new Date().toISOString(), "pseudo": "Alexandre C" });
+    const pseudo = req.query.pseudo;
+    const date = req.query.date;
+
+    allMsgs.push({
+        "msg": message,
+        "date": date,
+        "pseudo": pseudo
+    });
+
     res.json({ id: allMsgs.length - 1 });
 });
 

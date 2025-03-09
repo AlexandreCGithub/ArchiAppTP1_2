@@ -25,9 +25,12 @@
 
     <section>
         <h2>Poster un Nouveau Message</h2>
+        <label for="pseudo">Pseudo :</label>
+        <input type="text" id="pseudo" placeholder="Entrez votre pseudo">
+        <br><br>
         <textarea id="newMessage" rows="4" cols="50" placeholder="Écrivez votre message ici..."></textarea>
         <br><br>
-        <button onclick = postMessage() id="sendButton">Poster message</button>
+        <button onclick="postMessage()" id="sendButton">Poster message</button>
     </section>
 
     <section>

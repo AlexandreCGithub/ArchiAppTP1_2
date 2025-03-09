@@ -56,10 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // button post message is clicked
 function postMessage() {
-    const serviceUrl = getServiceUrl(); 
+    const serviceUrl = getServiceUrl();
     const newMessage = document.getElementById('newMessage').value;
-    if (newMessage.trim() !== '') {
-        fetch(`${serviceUrl}/msg/post/${encodeURIComponent(newMessage)}`)
+    const pseudo = document.getElementById('pseudo').value; // Récupérer le pseudo
+
+    if (newMessage.trim() !== '' && pseudo.trim() !== '') {
+        const encodedMessage = encodeURIComponent(newMessage);
+        const encodedPseudo = encodeURIComponent(pseudo);
+        
+        const url = serviceUrl + '/msg/post/' + encodedMessage + '?pseudo=' + encodedPseudo + '&date=' + new Date().toISOString();
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 if (data.id !== undefined) {
@@ -70,8 +77,11 @@ function postMessage() {
                 }
             })
             .catch(error => console.error('Erreur:', error));
+    } else {
+        console.error('Le pseudo ou le message ne peut pas être vide.');
     }
 }
+
 
 // delete a message
 function deleteMessage() {
