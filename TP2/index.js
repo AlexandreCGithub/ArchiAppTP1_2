@@ -11,7 +11,7 @@ var allMsgs = [
     { "msg": "I love cats", "date": "2025-03-09T13:08:04.798Z", "pseudo": "Charlie" }
 ];
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
