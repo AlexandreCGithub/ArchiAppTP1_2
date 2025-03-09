@@ -46,7 +46,10 @@ function fetchMessages() {
                 messagesList.appendChild(listItem);
             });
         })
-        .catch(error => console.error('Error fetching messages:', error));
+        .catch(error => {
+            console.error('Error fetching messages:', error);
+            alert('Error fetching messages: ' + error);
+        });
 }
 
 // page is loaded
@@ -81,11 +84,16 @@ btnSendButton.addEventListener("click", function(){
                     fetchMessages();
                 } else {
                     console.error('Erreur lors de l\'envoi du message.');
+                    alert('Erreur lors de l\'envoi du message.');
                 }
             })
-            .catch(error => console.error('Erreur:', error));
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Erreur: ' + error);
+            });
     } else {
         console.error('Le pseudo ou le message ne peut pas être vide.');
+        alert('Le pseudo ou le message ne peut pas être vide.');
     }
 });
 
@@ -102,9 +110,13 @@ btnDeleteButton.addEventListener("click", function(){
                 fetchMessages();
             } else {
                 console.error(`Erreur lors de la suppression du message avec ID ${id}.`);
+                alert(`Erreur lors de la suppression du message avec ID ${id}.`);
             }
         })
-        .catch(error => console.error('Erreur:', error));
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Erreur: ' + error);
+        });
 });
 
 // change of light mode
