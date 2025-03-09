@@ -27,7 +27,12 @@ function getServiceUrl()
     return document.getElementById('serviceUrl').value;
 }
 
-// get messages from backend: used at the page load and when update is clicked
+const btnToggleModeButton = document.getElementById("toggleModeButton");
+const btnUpdateButton = document.getElementById("updateButton");
+const btnSendButton = document.getElementById("sendButton");
+const btnDeleteButton = document.getElementById("deleteButton");
+
+// get messages from backend: function used each time we need a refresh
 function fetchMessages() {
     const serviceUrl = getServiceUrl();
     fetch(`${serviceUrl}/msg/getAll`)
@@ -44,18 +49,20 @@ function fetchMessages() {
         .catch(error => console.error('Error fetching messages:', error));
 }
 
-// button update is clicked
-function update() {
-    fetchMessages();
-}
-
 // page is loaded
 document.addEventListener('DOMContentLoaded', () => {
     fetchMessages();
 });
 
-// button post message is clicked
-function postMessage() {
+// button update is clicked
+btnUpdateButton.addEventListener("click", function(){
+    fetchMessages();
+});
+
+
+
+// button send message is clicked
+btnSendButton.addEventListener("click", function(){
     const serviceUrl = getServiceUrl();
     const newMessage = document.getElementById('newMessage').value;
     const pseudo = document.getElementById('pseudo').value; // Récupérer le pseudo
@@ -80,11 +87,11 @@ function postMessage() {
     } else {
         console.error('Le pseudo ou le message ne peut pas être vide.');
     }
-}
+});
 
 
-// delete a message
-function deleteMessage() {
+// delete a message button is clicked
+btnDeleteButton.addEventListener("click", function(){
     const serviceUrl = getServiceUrl(); 
     const id = parseInt(document.getElementById('messageId').value, 10);
     fetch(`${serviceUrl}/msg/del/${id}`)
@@ -98,10 +105,10 @@ function deleteMessage() {
             }
         })
         .catch(error => console.error('Erreur:', error));
-}
+});
 
 // change of light mode
-function toggleMode() {
+btnToggleModeButton.addEventListener("click", function(){
     const body = document.body;
     
     body.classList.toggle('dark');
@@ -112,7 +119,7 @@ function toggleMode() {
     } else {
         button.textContent = 'Passer en mode sombre';
     }
-}
+});
 
 
 

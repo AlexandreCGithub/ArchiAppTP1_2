@@ -12,7 +12,7 @@ Folder `TP1`, contains `index.html`, `script.js`, `style.css`
 
 Folder `TP2`, contains `index.js`, package files and (locally) node modules
 
-## Local deployment
+## :computer: Local deployment
 
 ### Requirements
 
@@ -40,7 +40,7 @@ Launch app
 
 Open index.html
 
-## Online deployment
+## :rocket: Online deployment
 
 App is deployed on render, using two services :
 
@@ -48,13 +48,13 @@ Front : https://archiappalexandrecorreia-tp1.onrender.com
 
 Back :  https://archiappalexandrecorreia-tp2.onrender.com
 
-::: warning
+:warning:
 as I use the free render plan, the back can spin down due to inactivity. It can take a minute to load and be available after being requested
-:::
+:warning:
 
 Click on front to use the app. The back can be used to test requests on the browser (all are GET)
 
-## App description:
+## :books: App description:
 
 ### Frontend: 
 
@@ -100,10 +100,3 @@ A message is a JSON object containing the following fields:
 ```
 
 When posting a message, the pseudo and date are sent too as parameters
-
-
-
-
-
-
-

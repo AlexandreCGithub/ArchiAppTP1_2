@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Application de Messages</h1>
-        <button id="toggleModeButton" onclick="toggleMode()">Passer en mode sombre</button>
+        <button id="toggleModeButton">Passer en mode sombre</button>
     </header>
     <section>
         <h2>Messages</h2>
@@ -20,7 +20,7 @@
             <li>Message 4</li>
             <li>Message 5</li>
         </ul>
-        <button onclick = update() id="sendButton">Mettre à jour</button>
+        <button id="updateButton">Mettre à jour</button>
     </section>
 
     <section>
@@ -30,7 +30,7 @@
         <br><br>
         <textarea id="newMessage" rows="4" cols="50" placeholder="Écrivez votre message ici..."></textarea>
         <br><br>
-        <button onclick="postMessage()" id="sendButton">Poster message</button>
+        <button id="sendButton">Poster message</button>
     </section>
 
     <section>
@@ -43,7 +43,7 @@
         <h2>Supprimer un Message</h2>
         <label for="messageId">ID du message à supprimer :</label>
         <input type="number" id="messageId" placeholder="Entrez un ID positif" min="0">
-        <button onclick="deleteMessage()">Supprimer</button>
+        <button id="deleteButton">Supprimer</button>
         <br><br>
         <label for="messageId">Attention les ID commencent à 0</label>
     </section>
