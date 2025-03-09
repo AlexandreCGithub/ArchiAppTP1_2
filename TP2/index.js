@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
   });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, '../TP1/index.html'));
+    res("Backend here. Open the front end.");
 })
 
 
