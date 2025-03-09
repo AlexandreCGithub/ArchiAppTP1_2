@@ -19,8 +19,8 @@ app.use(function(req, res, next) {
   });
 
 app.get("/", function(req, res) {
-    res("Backend here. Open the front end.");
-})
+    res.send("Backend here. Open the front end.");
+});
 
 
 // test route
