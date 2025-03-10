@@ -48,7 +48,6 @@ function fetchMessages() {
         })
         .catch(error => {
             console.error('Error fetching messages:', error);
-            alert('Error fetching messages: ' + error);
         });
 }
 
