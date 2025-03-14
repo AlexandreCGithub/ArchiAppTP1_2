@@ -52,9 +52,9 @@ app.get('/msg/get/:id', (req, res) => {
     const id = parseInt(req.params.id, 10);
     
     if (!isNaN(id) && id >= 0 && id < allMsgs.length) {
-        res.json({ code: 1, msg: allMsgs[id] });
+        res.json({ code: 0, msg: allMsgs[id] });
     } else {
-        res.json({ code: 0 });
+        res.json({ code: -1 });
     }
 });
 
