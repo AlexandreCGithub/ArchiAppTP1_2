@@ -67,7 +67,7 @@ btnUpdateButton.addEventListener("click", function(){
 btnSendButton.addEventListener("click", function(){
     const serviceUrl = getServiceUrl();
     const newMessage = document.getElementById('newMessage').value;
-    const pseudo = document.getElementById('pseudo').value; // Récupérer le pseudo
+    const pseudo = document.getElementById('pseudo').value;
 
     if (newMessage.trim() !== '' && pseudo.trim() !== '') {
         const encodedMessage = encodeURIComponent(newMessage);

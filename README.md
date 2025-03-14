@@ -40,6 +40,7 @@ Launch app
 ### Frontend
 
 Open index.html
+Change the backend url to the local url of your backend that just started. Probably localhost:8080
 
 ## 3. Online deployment
 
